@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>show student info</title>
+    <style>
+      .grid-container {
+                      display: grid;
+                      grid-template-columns: auto ;
+      }
+      .grid-container > div {
+          background-color: rgba(255, 255, 255, 0.8);
+          text-align: center;
+          padding: 20px 0;
+          font-size: 30px;
+        }
+        #viewData{
+        color:blue;
+        font-size:35px;
+        font-family:Helvecia;
+        font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<!--<div align="center">-->
+<!--    <h1>Create form page</h1>-->
+<!--    <div class="grid-container">-->
+<!--&lt;!&ndash;    <form action="#" th:action="@{'/addNewStudentsDb/' + ${students.id}}" method="post" th:object="${students}">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div><lebel>First name :</lebel>&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="text" th:field="*{firstName}" />&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    <div>&ndash;&gt;-->
+<!--&lt;!&ndash;        <lebel>Last name :</lebel>&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="text" th:field="*{lastName}" />&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <lebel>Department name :</lebel>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input type="text" th:field="*{department}" />&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        <button type="submit">Create</button>&ndash;&gt;-->
+<!--&lt;!&ndash;    </form>&ndash;&gt;-->
+<!--        -->
+<!--        -->
+<!--    </div>-->
+<!--&lt;!&ndash;    <div>&ndash;&gt;-->
+<!--&lt;!&ndash;        <h2>Messages</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;        <ul th:each="message : ${sessionMessages}">&ndash;&gt;-->
+<!--&lt;!&ndash;            <li th:text="${message}">msg</li>&ndash;&gt;-->
+<!--&lt;!&ndash;        </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <a href="/addStudents">return to main page</a>&ndash;&gt;-->
+<!--</div>-->
+<div align="center">
+<h1>Welcome to Home Page</h1>
+<h1>Create form page</h1>
+<div class="grid-container">
+    <div>
+        <p>welcome you are logged in <span th:text="${userName}"></span></p>
+    </div>
+
+    <form action="#" th:action="@{'/addNewStudentsDb/' + ${students.id}}" method="post" th:object="${students}">
+        <div><lebel>First name :</lebel>
+            <input type="text" th:field="*{firstName}" />
+        </div>
+        <div>
+            <lebel>Last name :</lebel>
+            <input type="text" th:field="*{lastName}" />
+        </div>
+        <div>
+            <lebel>Department name :</lebel>
+            <input type="text" th:field="*{department}" />
+        </div>
+
+        <button type="submit">Create</button>
+
+    </form>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" class="btn btn-info" value="Logout" />
+    </form>
+</div>
+</div>
+</body>
+</html>
